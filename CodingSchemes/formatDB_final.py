@@ -1,7 +1,7 @@
 #!/bin/env pyhton
 
 import sys
-
+import os
 import Bio
 from Bio import SeqIO
 import itertools
@@ -492,6 +492,7 @@ if __name__ == '__main__':
 		for line in lines:
 			finalFile.write(line+'\n')
 		filei.close()
+		os.remove(file+'.Process-'+str(i))
 	finalFile.close()
 	end_time = time.time()
 	print("Threads time=", end_time - start_time)
