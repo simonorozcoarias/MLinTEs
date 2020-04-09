@@ -490,7 +490,7 @@ if __name__ == '__main__':
 		filei = open(file+'.Process-'+str(i), 'r')
 		lines = filei.readLines()
 		for line in lines:
-			finalFile.write(line+'\n')
+			finalFile.write(line)
 		filei.close()
 		os.remove(file+'.Process-'+str(i))
 	finalFile.close()
