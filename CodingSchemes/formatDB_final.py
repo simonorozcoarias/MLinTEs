@@ -378,9 +378,13 @@ def maxLength(file):
 """
 This function calculates k-mer frequencies in parallel mode.
 """
-def kmerDB(file, id, seqs_per_procs, kmers, TEids, TEseqs, n):
-	init = id*seqs_per_procs + id
-	end = (id*seqs_per_procs + id) + seqs_per_procs
+def kmerDB(file, id, seqs_per_procs, kmers, TEids, TEseqs, n, remain):
+	if id < remain:
+		init = id * (seqs_per_procs + 1)
+		end = init + seqs_per_procs + 1
+	else:
+		init = id * seqs_per_procs + remain
+		end = init + seqs_per_procs
 	print("running in process "+str(id) + " init="+str(init)+" end="+str(end))
 	resultFile = open(file+'.'+multiprocessing.current_process().name, 'w')
 
@@ -480,7 +484,8 @@ if __name__ == '__main__':
 		TEseqs.append(te.seq)
 		n += 1
 	seqs_per_procs = int(n/threads)+1
-	processes = [multiprocessing.Process(target=kmerDB, args=[file, x, seqs_per_procs, kmers, TEids, TEseqs, n]) for x in range(threads)]
+	remain = n % threads
+	processes = [multiprocessing.Process(target=kmerDB, args=[file, x, seqs_per_procs, kmers, TEids, TEseqs, n, remain]) for x in range(threads)]
 	[process.start() for process in processes]
 	[process.join() for process in processes]
 
