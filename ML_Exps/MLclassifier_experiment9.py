@@ -157,7 +157,7 @@ def classification(filename, prepro, threads):
         names.append('LR')
         msg = "%s: %f (%f) with C: %s" % ('### LR', cv_results.mean(), cv_results.std(), str(x[yValidation.index(max(yValidation))]))
         print(msg)
-        
+        #print('###,LR,'+','.join([str(x) for x in cv_results.tolist()])) 
         #free memory
         lr = None
 
@@ -188,6 +188,7 @@ def classification(filename, prepro, threads):
         names.append('LDA')
         msg = "%s: %f (%f) with tol: %s" % ('### LDA', cv_results.mean(), cv_results.std(), str(x[yValidation.index(max(yValidation))]))
         print(msg)
+        #print('###,LDA,'+','.join(cv_results.tolist()))
         
         #free memory
         LDA = None
@@ -215,6 +216,7 @@ def classification(filename, prepro, threads):
         names.append('KNN')
         msg = "%s: %f (%f) with Neighbors: %s" % ('### KNN', cv_results.mean(), cv_results.std(), str(x[yValidation.index(max(yValidation))]))
         print(msg)
+        #print('###,KNN,'+','.join(cv_results))
 
         #free memory
         KNN = None
@@ -246,6 +248,7 @@ def classification(filename, prepro, threads):
         names.append('MLP')
         msg = "%s: %f (%f) with Neurons: %s" % ('### MLP', cv_results.mean(), cv_results.std(), str(x[yValidation.index(max(yValidation))]))
         print(msg)
+        #print('###,MLP,'+','.join(cv_results))
 
         #free memory
         MLP = None
@@ -277,9 +280,11 @@ def classification(filename, prepro, threads):
         names.append('RF')
         msg = "%s: %f (%f) with n_estimators: %s" % ('### RF', cv_results.mean(), cv_results.std(), str(x[yValidation.index(max(yValidation))]))
         print(msg)
+        #print('###,RF,'+','.join(cv_results))
 
         #free memory
         RF = None
+
         # DT
         limit=10
         step=1
@@ -307,7 +312,8 @@ def classification(filename, prepro, threads):
         names.append('DT')
         msg = "%s: %f (%f) with max_depth: %s" % ('### DT', cv_results.mean(), cv_results.std(), str(x[yValidation.index(max(yValidation))]))
         print(msg)
-        
+        #print('###,DT,'+','.join(cv_results))        
+
         #free memory
         DT = None
 
@@ -338,6 +344,7 @@ def classification(filename, prepro, threads):
         names.append('NB')
         msg = "%s: %f (%f) with var_smoothing: %s" % ('### NB', cv_results.mean(), cv_results.std(), str(x[yValidation.index(max(yValidation))]))
         print(msg)
+        #print('###,NB,'+','.join(cv_results))
 
         #free memory
         NB = None
@@ -374,6 +381,7 @@ def classification(filename, prepro, threads):
         names.append('svc')
         msg = "%s: %f (%f) with C: %s" % ('### svc', cv_results.mean(), cv_results.std(), str(x[yValidation.index(max(yValidation))]))
         print(msg)
+        #print('###,SVC,'+','.join(cv_results))
 
         #releasing memory
         svc = None
@@ -387,9 +395,13 @@ def classification(filename, prepro, threads):
         ax.set_xticklabels(names)
         plt.savefig('comparisons.png', dpi=300)
 
+        #print(results)
+        #print(+names)
+
         # print results
         for i in range(len(results)):
-        	print('### '+names[i]+': '+results[i])
+        	print('###|'+names[i]+'|'+'|'.join([str(x) for x in results[i].tolist()]))
+
 
 
 def metrics(Y_validation,predictions):
@@ -417,7 +429,7 @@ if __name__ == '__main__':
     threads=int(sys.argv[2])
     print(fileData)
     print(threads)
-    classification(fileData, 1, threads)
+    #classification(fileData, 1, threads)
     #classification(fileData, 2, threads)
     #classification(fileData, 3, threads)
-    #classification(fileData, 4, threads)
+    classification(fileData, 4, threads)
