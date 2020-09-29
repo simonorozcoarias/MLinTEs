@@ -68,12 +68,16 @@ def conversion2d(file, maxlength, numSeqs):
 		# 	order = 23
 		# elif str(te.id).upper().find("SELGY-") != -1:
 		# 	order = 24
-		if order != -1:			
+		if order != -1:	
+			if len(seq) < maxLen:
+					# to complete TEs with self-replication method
+					times = int((maxLen-len(seq))/len(seq))+1
+					seq = str(seq+(str(seq)*(times+1)))[0:maxLen]		
 			for nucl in seq:
 				posLang = langu.index(nucl.upper())
 				rep2d[posSeq][posLang][posNucl] = 1
-				labels[posSeq][0] = order
 				posNucl += 1
+			labels[posSeq][0] = order
 		else:
 			print("---------- error: --------------")
 			print(te.id)
@@ -102,9 +106,21 @@ def maxLength(file):
 		numSeqs += 1
 	return (maxLen, numSeqs)
 
+"""
+This function deletes all characters that are no DNA (A, C, G, T, N)
+"""
+def filter(file):
+	newFile = open(file+".filtered", "w")
+	for te in SeqIO.parse(file, "fasta"):
+		seq = str(te.seq)
+		filterDna = [x for x in seq if x.upper() in ['A', 'C', 'G', 'T', 'N']]
+		newSeq = "".join(filterDna)
+		newFile.write(">"+str(te.id)+"\n"+newSeq+"\n")
+
+
 if __name__ == '__main__':
 	seqfile = sys.argv[1]
-	maxLen, numSeqs = maxLength(seqfile)
-
-	conversion2d(seqfile, maxLen, numSeqs)
+	filter(seqfile)
+	maxLen, numSeqs = maxLength(seqfile+".filtered")
+	conversion2d(seqfile+".filtered", maxLen, numSeqs)
 

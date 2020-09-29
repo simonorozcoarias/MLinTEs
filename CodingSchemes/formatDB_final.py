@@ -457,9 +457,9 @@ def kmerDB(file, id, seqs_per_procs, kmers, TEids, TEseqs, n, remain):
 
 if __name__ == '__main__':
 	# 
-	file = "/home/orozco/Doctorado/databasesForML/finalDatabases/lineages_classification/PGSB/PGSB_0805219_cleaned.fasta_final"
+	file = "/home/bioml/Projects/PhD/InpactorDB/InpactorDB_LTR_STRUCT.fasta"
 	maxlen = maxLength(file)
-	# maxLength(file)
+	maxLength(file)
 	print("Max length: "+str(maxlen))
 	filterDBLineages(file, "DAX", maxlen)
 	filterDBLineages(file, "EIIP", maxlen)
@@ -471,7 +471,7 @@ if __name__ == '__main__':
 	
 	# kmer features calculator in parallel mode
 	# number of threads to calculate k-mer frequencies in parallel.
-	threads = 8
+	"""threads = 64
 	kmers = []
 	for k in range(1,7):
 		for item in itertools.product('ACGT', repeat=k):
@@ -493,11 +493,11 @@ if __name__ == '__main__':
 	finalFile.write('Label,'+','.join(kmers)+'\n')
 	for i in range(1, threads+1):
 		filei = open(file+'.Process-'+str(i), 'r')
-		lines = filei.readLines()
+		lines = filei.readlines()
 		for line in lines:
 			finalFile.write(line)
 		filei.close()
 		os.remove(file+'.Process-'+str(i))
 	finalFile.close()
 	end_time = time.time()
-	print("Threads time=", end_time - start_time)
+	print("Threads time=", end_time - start_time)"""
