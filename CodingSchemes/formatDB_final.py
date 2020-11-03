@@ -93,11 +93,11 @@ def filterDBLineages(file,schema,maxlength):
 			if order != -1:
 				if len(caracters) < maxlength:
 					# to complete TEs with self-replication method
-					#times = int((maxlength-len(caracters))/len(caracters))+1
-					#caracters = str(caracters+(str(caracters)*(times+1)))[0:maxlength]
+					times = int((maxlength-len(caracters))/len(caracters))+1
+					caracters = str(caracters+(str(caracters)*(times+1)))[0:maxlength]
 					# to complete TEs with NNs-filling method
-					diff = maxlength - len(caracters)
-					caracters += ''.join(['N' for x in range(diff)])
+					#diff = maxlength - len(caracters)
+					#caracters += ''.join(['N' for x in range(diff)])
 				if schema == 'DAX':
 					newseq = ','.join([str(DAX(caracters[x])) for x in range(0, len(caracters))])
 				elif schema == 'EIIP':
@@ -389,7 +389,7 @@ def kmerDB(file, id, seqs_per_procs, kmers, TEids, TEseqs, n, remain):
 	resultFile = open(file+'.'+multiprocessing.current_process().name, 'w')
 
 	while init < end and init < n:
-		order = -1
+		order = 0
 		if str(TEids[init]).upper().find("ALE-") != -1 or str(TEids[init]).upper().find("RETROFIT-") != -1:
 			order = 1
 		# elif str(TEids[init]).upper().find("ALESIA-") != -1:
@@ -457,21 +457,22 @@ def kmerDB(file, id, seqs_per_procs, kmers, TEids, TEseqs, n, remain):
 
 if __name__ == '__main__':
 	# 
-	file = "/home/bioml/Projects/PhD/InpactorDB/InpactorDB_LTR_STRUCT.fasta"
+	file = "/home/bioml/Projects/PhD/InpactorDB/V2/InpactorDB_v2.fasta"
 	maxlen = maxLength(file)
 	maxLength(file)
-	print("Max length: "+str(maxlen))
-	filterDBLineages(file, "DAX", maxlen)
-	filterDBLineages(file, "EIIP", maxlen)
+	#print("Max length: "+str(maxlen))
+	#filterDBLineages(file, "DAX", maxlen)
+	#filterDBLineages(file, "EIIP", maxlen)
 	filterDBLineages(file, "complementary", maxlen)
-	filterDBLineages(file, "orthogonal", maxlen)
-	filterDBLineages(file, "enthalpy", maxlen)
-	filterDBLineages(file, "Galois4", maxlen)
-	physicochemicalTotal(file)
+	#filterDBLineages(file, "orthogonal", maxlen)
+	#filterDBLineages(file, "enthalpy", maxlen)
+	#filterDBLineages(file, "Galois4", maxlen)
+	#physicochemicalTotal(file)
 	
 	# kmer features calculator in parallel mode
 	# number of threads to calculate k-mer frequencies in parallel.
 	"""threads = 64
+	start_time = time.time()
 	kmers = []
 	for k in range(1,7):
 		for item in itertools.product('ACGT', repeat=k):

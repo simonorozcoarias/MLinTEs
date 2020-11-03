@@ -229,4 +229,4 @@ if __name__ == "__main__":
 	similarity = 0.5 #minimum simlarity to filter nested TEs
 	aligLen = 100 # minimum alignment length to filter nested TEs
 	percLen = 10 # minimum percentage of TE length to be discarted to the filter
-	nestedtTEsFilter(seqfile, 'repbase_20170127.fasta_class2', 1, threads, similarity, aligLen, percLen)
+	nestedtTEsFilter(seqfile, '/home/bioml/Projects/PhD/MLinTEs/ManualClassification/repbase_20170127.fasta_class2', 1, threads, similarity, aligLen, percLen)

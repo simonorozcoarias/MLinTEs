@@ -9,12 +9,32 @@ from Bio import SeqIO
 This function takes as input classified TEs at lineage level and transforms nucleotide sequences in
 a 2D representation using one hot coding (as implemented in TERL)
 """
-def conversion2d(file, maxlength, numSeqs):
+def conversion2d(file, maxlength, numSeqs, method):
 
 	langu = ['A', 'C', 'G', 'T', 'N']
-	rep2d = np.zeros((numSeqs, 5, maxLen))
+	rep2d = np.zeros((numSeqs, 5, maxlength))
 	posSeq = 0
 	labels = np.zeros((numSeqs, 1))
+	methodName = ""
+
+	if method == 1:
+		# to complete TEs with self-replication method
+		methodName = "self"
+	elif method == 2:
+		# to complete TEs with zeros, it's not necessary doing anything
+		methodName = "zeros"	
+	elif method == 3:
+		# to complete TEs with NNs
+		methodName = "NNs"
+	elif method == 4:
+		# to complete TEs with NNs centering the sequence
+		methodName = "center"
+	elif method == 5:
+		# to complete TEs with ones
+		methodName = "ones"
+
+	print("Doing conversion into 2D of "+file+" using "+methodName+" method")
+
 	for te in SeqIO.parse(file, "fasta"):
 		seq = str(te.seq)
 		posNucl = 0
@@ -69,14 +89,36 @@ def conversion2d(file, maxlength, numSeqs):
 		# elif str(te.id).upper().find("SELGY-") != -1:
 		# 	order = 24
 		if order != -1:	
-			if len(seq) < maxLen:
-					# to complete TEs with self-replication method
-					times = int((maxLen-len(seq))/len(seq))+1
-					seq = str(seq+(str(seq)*(times+1)))[0:maxLen]		
+			if len(seq) < maxlength:
+					if method == 1:
+						# to complete TEs with self-replication method
+						times = int((maxlength-len(seq))/len(seq))+1
+						seq = str(seq+(str(seq)*(times+1)))[0:maxlength]	
+					#elif method == 2:
+						# to complete TEs with zeros, it's not necessary doing anything
+					elif method == 3:
+						# to complete TEs with NNs
+						times = maxlength-len(seq)
+						NNs = 'N'*(times+1)
+						seq = str(str(seq)+NNs)[0:maxlength]
+					elif method == 4:
+						# to complete TEs with NNs centering the sequence
+						times = int((maxlength-len(seq))/2)
+						seq = str('N'*times+str(seq)+'N'*(times+1))[0:maxlength]
 			for nucl in seq:
 				posLang = langu.index(nucl.upper())
 				rep2d[posSeq][posLang][posNucl] = 1
 				posNucl += 1
+
+			# to complete TEs with ones
+			if method == 5:
+				for i in range(len(seq), maxlength):
+					rep2d[posSeq][0][i] = 1
+					rep2d[posSeq][1][i] = 1
+					rep2d[posSeq][2][i] = 1
+					rep2d[posSeq][3][i] = 1
+					rep2d[posSeq][4][i] = 1
+
 			labels[posSeq][0] = order
 		else:
 			print("---------- error: --------------")
@@ -88,10 +130,10 @@ def conversion2d(file, maxlength, numSeqs):
 		posSeq += 1
 
 	print("saving features file...")
-	save(file+'.npy', rep2d)
+	save(file+'_'+methodName+'.npy', rep2d)
 	print("done!!")
 	print("saving labels file...")
-	save(file+'_lables.npy', labels)
+	save(file+'_'+methodName+'_labels.npy', labels)
 	print("done!!")
 
 """
@@ -120,7 +162,9 @@ def filter(file):
 
 if __name__ == '__main__':
 	seqfile = sys.argv[1]
-	filter(seqfile)
+	method = int(sys.argv[2])
+	#filter(seqfile)
 	maxLen, numSeqs = maxLength(seqfile+".filtered")
-	conversion2d(seqfile+".filtered", maxLen, numSeqs)
+	print(maxLen)
+	conversion2d(seqfile+".filtered", maxLen, numSeqs, method)
 
