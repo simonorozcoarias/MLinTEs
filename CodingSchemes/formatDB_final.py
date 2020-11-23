@@ -389,7 +389,18 @@ def kmerDB(file, id, seqs_per_procs, kmers, TEids, TEseqs, n, remain):
 	resultFile = open(file+'.'+multiprocessing.current_process().name, 'w')
 
 	while init < end and init < n:
-		order = 0
+		order = -1
+		"""if str(TEids[init]).upper().find("RLC_") != -1 or str(TEids[init]).upper().find("COPIA") != -1:
+			order = 1
+		elif str(TEids[init]).upper().find("RLG_") != -1 or str(TEids[init]).upper().find("GYPSY") != -1:
+			order = 2"""
+
+		# Lineages from Copia
+		"""if str(TEids[init]).upper().find("ALE-") != -1 or str(TEids[init]).upper().find("RETROFIT-") != -1 or str(TEids[init]).upper().find("ALESIA-") != -1 or str(TEids[init]).upper().find("ANGELA-") != -1 		or str(TEids[init]).upper().find("BIANCA-") != -1 or str(TEids[init]).upper().find("BRYCO-") != -1 or str(TEids[init]).upper().find("LYCO-") != -1 or str(TEids[init]).upper().find("GYMCO-") != -1 		or str(TEids[init]).upper().find("IKEROS-") != -1 or str(TEids[init]).upper().find("IVANA-") != -1 or str(TEids[init]).upper().find("ORYCO-") != -1 or str(TEids[init]).upper().find("OSSER-") != -1 or str(TEids[init]).upper().find("TAR-") != -1 or str(TEids[init]).upper().find("TORK-") != -1 or str(TEids[init]).upper().find("SIRE-") != -1:
+			order = 1
+		# Lineages from Gypsy
+		elif str(TEids[init]).upper().find("CRM-") != -1 or str(TEids[init]).upper().find("CHLAMYVIR-") != -1 or str(TEids[init]).upper().find("GALADRIEL-") != -1 or str(TEids[init]).upper().find("REINA-") != -1 		or str(TEids[init]).upper().find("TEKAY-") != -1 or str(TEids[init]).upper().find("DEL-") != -1 or str(TEids[init]).upper().find("ATHILA-") != -1 or str(TEids[init]).upper().find("OGRE-") != -1 		or str(TEids[init]).upper().find("RETAND-") != -1 or str(TEids[init]).upper().find("PHYGY-") != -1 or str(TEids[init]).upper().find("SELGY-") != -1:
+			order = 0"""
 		if str(TEids[init]).upper().find("ALE-") != -1 or str(TEids[init]).upper().find("RETROFIT-") != -1:
 			order = 1
 		# elif str(TEids[init]).upper().find("ALESIA-") != -1:
@@ -457,21 +468,21 @@ def kmerDB(file, id, seqs_per_procs, kmers, TEids, TEseqs, n, remain):
 
 if __name__ == '__main__':
 	# 
-	file = "/home/bioml/Projects/PhD/InpactorDB/V2/InpactorDB_v2.fasta"
+	file = sys.argv[1]
 	maxlen = maxLength(file)
 	maxLength(file)
-	#print("Max length: "+str(maxlen))
-	#filterDBLineages(file, "DAX", maxlen)
-	#filterDBLineages(file, "EIIP", maxlen)
+	print("Max length: "+str(maxlen))
+	filterDBLineages(file, "DAX", maxlen)
+	filterDBLineages(file, "EIIP", maxlen)
 	filterDBLineages(file, "complementary", maxlen)
 	#filterDBLineages(file, "orthogonal", maxlen)
-	#filterDBLineages(file, "enthalpy", maxlen)
-	#filterDBLineages(file, "Galois4", maxlen)
-	#physicochemicalTotal(file)
+	filterDBLineages(file, "enthalpy", maxlen)
+	filterDBLineages(file, "Galois4", maxlen)
+	physicochemicalTotal(file)
 	
 	# kmer features calculator in parallel mode
 	# number of threads to calculate k-mer frequencies in parallel.
-	"""threads = 64
+	threads = 32
 	start_time = time.time()
 	kmers = []
 	for k in range(1,7):
@@ -501,4 +512,4 @@ if __name__ == '__main__':
 		os.remove(file+'.Process-'+str(i))
 	finalFile.close()
 	end_time = time.time()
-	print("Threads time=", end_time - start_time)"""
+	print("Threads time=", end_time - start_time)
