@@ -1,0 +1,29 @@
+Y_train length =  91915
+Y_test length =  10213
+New percentage is= 11.11%
+K-fold is equal to  9
+Accuracy: 0.96 (+/- 0.00) [KNN]
+Accuracy: 0.83 (+/- 0.01) [LR]
+Accuracy: 0.95 (+/- 0.00) [LDA]
+Accuracy: 0.96 (+/- 0.00) [Stacking Classifier]
+Cross validation score:  0.9567249244452763
+F1 score: 0.9572042480967914
+Recall: 0.9572113972388133
+Precision: 0.957481903612324
+#####################################
+Full Script Tunning time 2884.065450668335
+######## generalization tests ##################
+### GCF_001625215.1_ASM162521v1 ###
+F1 score: 0.9186596979557422
+Recall: 0.9092356687898089
+Precision: 0.9400814841137393
+######## generalization tests ##################
+### GCF_001876935.1_Aspof.V1 ###
+F1 score: 0.8308793443510005
+Recall: 0.8251774374299589
+Precision: 0.8741359099139985
+######## generalization tests ##################
+### GCF_003935025.1_Abrus_2018 ###
+F1 score: 0.9213300465303056
+Recall: 0.9153713298791019
+Precision: 0.9413825480714154

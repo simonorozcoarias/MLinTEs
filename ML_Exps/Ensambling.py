@@ -246,3 +246,44 @@ plot_learning_curve(sclf, title, X_train, Y_train,
 plt.savefig(str(text_model)+"_Tunned_Algorithm.png", dpi=300)
 Fend_t = time.time()
 print("Full Script Tunning time",Fend_t-Fstart_t)
+
+
+# generalization tests:
+filename = "/home/bioml/Projects/PhD/InpactorDB/version_final/genomes_for_test/GCF_001625215.1_ASM162521v1_genomic.fna.mod.LTR.intact.fa_final.kmers"
+print("######## generalization tests ##################")
+print("### GCF_001625215.1_ASM162521v1 ###")
+training_data = pd.read_csv(filename)
+label_vectors = training_data['Label'].values
+feature_vectors = training_data.drop(['Label'],axis=1)
+feature_vectors_scaler = scaler.transform(feature_vectors)
+X_trainPCAScaler = pca.transform(feature_vectors_scaler)
+
+prediction = sclf.predict(X_trainPCAScaler)
+
+snn_cm = metrics(label_vectors,prediction)
+
+filename = "/home/bioml/Projects/PhD/InpactorDB/version_final/genomes_for_test/GCF_001876935.1_Aspof.V1_genomic.fna.mod.LTR.intact.fa_final.kmers"
+print("######## generalization tests ##################")
+print("### GCF_001876935.1_Aspof.V1 ###")
+training_data = pd.read_csv(filename)
+label_vectors = training_data['Label'].values
+feature_vectors = training_data.drop(['Label'],axis=1)
+feature_vectors_scaler = scaler.transform(feature_vectors)
+X_trainPCAScaler = pca.transform(feature_vectors_scaler)
+
+prediction = sclf.predict(X_trainPCAScaler)
+
+snn_cm = metrics(label_vectors,prediction)
+
+filename = "/home/bioml/Projects/PhD/InpactorDB/version_final/genomes_for_test/GCF_003935025.1_Abrus_2018_genomic.fna.mod.LTR.intact.fa_final.kmers"
+print("######## generalization tests ##################")
+print("### GCF_003935025.1_Abrus_2018 ###")
+training_data = pd.read_csv(filename)
+label_vectors = training_data['Label'].values
+feature_vectors = training_data.drop(['Label'],axis=1)
+feature_vectors_scaler = scaler.transform(feature_vectors)
+X_trainPCAScaler = pca.transform(feature_vectors_scaler)
+
+prediction = sclf.predict(X_trainPCAScaler)
+
+snn_cm = metrics(label_vectors,prediction)
