@@ -1,0 +1,20 @@
+#########################################################################
+#                                                                       #
+# Inpactor2: LTR Retrotransposon annotator using Deep Neural Networks   #
+#                                                                       #
+#########################################################################
+
+WARNING: Missing output directory, using by default: /home/bioml/Projects/PhD/OE2
+WARNING: Missing threads parameter, using by default: 64
+WARNING: Missing mode parameter, using by default: slow
+INFO: Starting to split chromosomes into sequences of length 10000 with sliding window size 500...
+INFO: Splitting done!!!! [time=0.020875215530395508]
+INFO: Starting to extract k-mer frequencies as features from sequences in mode slow...
+INFO: Extraction of k-mer frequencies done!!!! [time=1207.2005777359009]
+INFO: Starting to predict the lineages from sequences...
+INFO: Prediction of the lineages from sequences done!!! [time=4.153442144393921]
+INFO: Starting join predictions...
+INFO: Joining predictions done!!! [time=0.0011510848999023438]
+INFO: Creating output fasta file...
+INFO: Joining predictions done!!! [time=3.0009233951568604]
+
