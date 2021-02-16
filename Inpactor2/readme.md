@@ -4,6 +4,7 @@
 Version history: 
 
 version 0.2 (Genomic splitting, k-mer generation (inefficient), lineages prediction, and output in bed format)
+
 version 0.1 (two step without genomic splitting)
 
 To run:
