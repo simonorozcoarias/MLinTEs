@@ -1,7 +1,7 @@
 # the new version of Inpactor, an annotator that uses DNN for detection and classification of LTR retrotransposons in plant genomes
 
-## Current 
-Version history: Version 0.3 (mode selection [slow or fast], output in bed and fasta formats, and posibility to use a pre-calculated k-mer file)
+## Current Version 0.3: (mode selection [slow or fast], output in bed and fasta formats, and posibility to use a pre-calculated k-mer file)
+Version history: 
 
 version 0.2 (Genomic splitting, k-mer generation (inefficient), lineages prediction, and output in bed format)
 version 0.1 (two step without genomic splitting)
