@@ -1,9 +1,17 @@
 # the new version of Inpactor, an annotator that uses DNN for detection and classification of LTR retrotransposons in plant genomes
 
-## Current Version stable:
+## Current Version stable: https://github.com/simonorozcoarias/Inpactor2
 Version history: 
 
-version 1.6 (Added the Non-maximal suppression step)
+version 2.0 (Bugs corrected and deletion of unuse code)
+
+version 1.9 (Improving the modularity using master and slave functions separately)
+
+version 1.8 (Added the verbose option)
+
+version 1.7 (Added the cycles analysis option)
+
+version 1.6 (Added the Non-maximal suppression step and replace BLASTn by LTR_Finder for detection)
 
 version 1.5 (Creation of functions for each step, deleting those lines from main function)
 
