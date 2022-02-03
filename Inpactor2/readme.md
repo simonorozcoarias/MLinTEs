@@ -3,7 +3,15 @@
 ## Current Version stable:
 Version history: 
 
-version 0.8
+version 1.6 (Added the Non-maximal suppression step)
+
+version 1.5 (Creation of functions for each step, deleting those lines from main function)
+
+version 1.4 (Added the pre-filter step checking if the seqs contain non-nucleotic characters)
+
+version 1.3 (Integration of RepeatMasker to annotate the newly created library) 
+
+version 1.2 (Detection using Inpactor2_Detect and using BLASTn for the starting and ending positions, counting k-mer using a CNN, and filtering with FNN)
 
 version 0.7 (Utilization of EDTA to detect LTR-RTs)
 
