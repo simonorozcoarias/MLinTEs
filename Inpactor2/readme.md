@@ -1,7 +1,15 @@
 # the new version of Inpactor, an annotator that uses DNN for detection and classification of LTR retrotransposons in plant genomes
 
-## Current Version 0.5: (k-mer counting improved using dynamic programming)
+## Current Version stable:
 Version history: 
+
+version 0.8
+
+version 0.7 (Utilization of EDTA to detect LTR-RTs)
+
+version 0.6 (MPI implementation using MPI4py python package)
+
+version 0.5 (k-mer counting improved using dynamic programming)
 
 version 0.4 (Solved issue with huge temporal file in the splitting step)
 
