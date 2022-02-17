@@ -3,7 +3,7 @@ Ph.D. Thesis of Simon Orozco-Arias
 Advisor: Gustavo Isaza, Ph.D.
 Co-Advisor: Romain Guyot, Ph.D.
 
-## The organiation of this repository is the following:
+## The organization of this repository is the following:
 
 * [CodingSchemes](#CodingSchemes)  
 * [DL_Exps](#DL_Exps)  
@@ -60,6 +60,7 @@ This folder contains the jupyter notebook used to train Inpactor2 to specialize 
 
 ## Publish papers
 <a name="papers"/>
+
 * Orozco-Arias, S., Liu, J., Tabares-Soto, R., Ceballos, D., Silva Domingues, D., Garavito, A., ... & Guyot, R. (**2018**). Inpactor, integrated and parallel analyzer and classifier of LTR retrotransposons and its application for pineapple LTR retrotransposons diversity and dynamics. Biology, 7(2), 32.
 * Orozco-Arias, S., Isaza, G., & Guyot, R. (**2019**). Retrotransposons in plant genomes: structure, identification, and classification through bioinformatics and machine learning. International journal of molecular sciences, 20(15), 3837.
 * Orozco-Arias, S., Isaza, G., Guyot, R., & Tabares-Soto, R. (**2019**). A systematic review of the application of machine learning in the detection and classification of transposable elements. PeerJ, 7, e8311.
