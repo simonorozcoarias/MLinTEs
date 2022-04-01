@@ -29,7 +29,7 @@ Experiment using the one-hot complementary scheme, in 2 dimentions and the TERL 
 Experiment using the positional k-mers scheme, in 2 dimentions and the TERL architecture.
 
 ## VGG19_positional_kmers.ipynb
-Experiment using the center scheme, in 2 dimentions and the VGG19 architecture.
+Experiment using the positional k-mers scheme, in 2 dimentions and the VGG19 architecture.
 
 ## VGG7_positional_kmers.ipynb
-Experiment using the center scheme, in 2 dimentions and the VGG7 architecture.
+Experiment using the positional k-mers scheme, in 2 dimentions and the VGG7 architecture.
