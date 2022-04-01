@@ -58,7 +58,7 @@ def filter(file):
         newFile.write(">"+str(te.id)+"\n"+newSeq+"\n")
 
 if __name__ == '__main__':
-    seqfile = 'chr1.fna'
+    seqfile = sys.argv[1]
     total_win_len = 50000
     #filter(seqfile)
     create_dataset(seqfile, total_win_len)
