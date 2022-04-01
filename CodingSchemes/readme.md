@@ -28,3 +28,29 @@ To execute the script:
 python3 2dconversion.py fasta_file.fasta number_threads
 ```
 Where *fasta_file.fasta* is your own file in fasta format with the LTR retrotransposons to convert and *number_threads* is the number of threads available in your own computer.
+
+### extractNegativeInstancesRandom.py
+Script used to extract randomly sequences from a dataset. The number of sequences to extract is given in a dictionary in line 33.
+
+To execute the script:
+
+```
+python3 extractNegativeInstancesRandom.py fasta_file.fasta 
+```
+Where *fasta_file.fasta* is your own file in fasta format with the LTR retrotransposons.
+
+### formatDB_final.py 
+This script convert DNA sequences into numerical representations. A difference of the first script of this repo, these representation are in one dimention. The results of this script is a file for each of the seven numerical representations. The available numerical representations are describe as following:
+1. DAX: {‘C’:0, ‘T’:1, ‘A’:2, ‘G’:3}
+2. EIIP: {‘C’:0.1340, ‘T’:0.1335, ‘A’:0.1260, ‘G’:0.0806}
+3. Complementary: {‘C’:-1, ‘T’:-2, ‘A’:2, ‘G’:1}
+4. Enthalpy: {‘CC’:0.11, ‘TT’:0.091, ‘AA’:0.091, ‘GG’:0.11, ‘CT’:0.078, ‘TA’:0.06, ‘AG’:0.078, ‘CA’:0.058, ‘TG’:0.058, ‘CG’: 0.119, ‘TC’:0.056, ‘AT’:0.086, ‘GA’:0.056, ‘AC’:0.065, ‘GT’:0.065, ‘GC’:0.1111}
+5. Galois(4): {‘CC’:0.0, ‘CT’:1.0, ‘CA’:2.0, ‘CG’:3.0, ‘TC’:4.0, ‘TT’:5.0, ‘TA’:6.0, ‘TG’:7.0, ‘AC:8.0, ‘AT: 9.0, ‘AA’:1.0, ‘AG:11.0, ‘GC’:12.0, ‘GT’:13.0, ‘GA’:14.0, ‘GG’:15.0 }
+6. Physico-chemical properties: This approach calculate three properties such as average hydrogen bonding energy per base pair (bp), stacking energy (per bp), and solvation energy (per bp).
+7. k-mer frequencies using k values between one and six.
+
+To execute the script:
+```
+python3 formatDB_final.py fasta_file.fasta number_threads
+```
+Where *fasta_file.fasta* is your own file in fasta format with the LTR retrotransposons to convert and *number_threads* is the number of threads available in your own computer.
