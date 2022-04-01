@@ -54,3 +54,12 @@ To execute the script:
 python3 formatDB_final.py fasta_file.fasta number_threads
 ```
 Where *fasta_file.fasta* is your own file in fasta format with the LTR retrotransposons to convert and *number_threads* is the number of threads available in your own computer.
+
+### step1_one_hot_conversion.py 
+This script split the input sequences into sectios of 50,000 bases and then, converts them into one-hot numerical representation.
+
+To execute the script:
+```
+python3 step1_one_hot_conversion.py fasta_file.fasta 
+```
+Where *fasta_file.fasta* is your own file in fasta format with the LTR retrotransposons.
