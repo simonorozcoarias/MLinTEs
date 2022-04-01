@@ -476,7 +476,7 @@ if __name__ == '__main__':
 	filterDBLineages(file, "DAX", maxlen)
 	filterDBLineages(file, "EIIP", maxlen)
 	filterDBLineages(file, "complementary", maxlen)
-	#filterDBLineages(file, "orthogonal", maxlen)
+	filterDBLineages(file, "orthogonal", maxlen)
 	filterDBLineages(file, "enthalpy", maxlen)
 	filterDBLineages(file, "Galois4", maxlen)
 	physicochemicalTotal(file)
