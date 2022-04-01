@@ -47,11 +47,11 @@ def filterDBLineages(file,schema,maxlength):
 			if order != -1:
 				if len(caracters) < maxlength:
 					# to complete TEs with self-replication method
-					#times = int((maxlength-len(caracters))/len(caracters))+1
-					#caracters = str(caracters+(str(caracters)*(times+1)))[0:maxlength]
+					times = int((maxlength-len(caracters))/len(caracters))+1
+					caracters = str(caracters+(str(caracters)*(times+1)))[0:maxlength]
 					# to complete TEs with NNs-filling method
-					diff = maxlength - len(caracters)
-					caracters += ''.join(['N' for x in range(diff)])
+					#diff = maxlength - len(caracters)
+					#caracters += ''.join(['N' for x in range(diff)])
 				if schema == 'DAX':
 					newseq = ','.join([str(DAX(caracters[x])) for x in range(0, len(caracters))])
 				elif schema == 'EIIP':
