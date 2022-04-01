@@ -4,6 +4,11 @@
 
 ### 2dconversion.py
 This script converts a DNA sequence into different 2D representations using as a basis the representation of a point (see figure below). This script contains the following 2D representations:
+
+<p align="center">
+  <img src="https://github.com/simonorozcoarias/MLinTEs/blob/master/CodingSchemes/2d%20coding%20schemes.png">
+</p>
+
 1. Self-replication: consists of replicating the DNA sequence until the desired length is reached (in this case the maximum length of the sequence in the dataset).
 2. Zeros: Consists in filling the representation of the DNA sequence with zeros.
 3. NNs: Consists in filling the representation of the DNA sequence with Ns.
