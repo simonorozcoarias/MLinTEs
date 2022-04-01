@@ -469,6 +469,7 @@ def kmerDB(file, id, seqs_per_procs, kmers, TEids, TEseqs, n, remain):
 if __name__ == '__main__':
 	# 
 	file = sys.argv[1]
+	threads = int(sys.argv[2])
 	maxlen = maxLength(file)
 	maxLength(file)
 	print("Max length: "+str(maxlen))
@@ -482,7 +483,6 @@ if __name__ == '__main__':
 	
 	# kmer features calculator in parallel mode
 	# number of threads to calculate k-mer frequencies in parallel.
-	threads = 32
 	start_time = time.time()
 	kmers = []
 	for k in range(1,7):
