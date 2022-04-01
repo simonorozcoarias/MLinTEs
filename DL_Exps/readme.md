@@ -8,7 +8,7 @@ A convolutional neural network based on TERL that has the task of classifying LT
 Neural networks used in the paper InpactorDB
 
 ## DeepTE_comparisons_1D_representations.ipynb
-Experiments done with DeepTE architecture, a 1D convolutional network and training using the different DNA numerical representations in 1 dimention (see [Coding Schemes folder](https://github.com/simonorozcoarias/MLinTEs/tree/master/CodingSchemes). 
+Experiments done with DeepTE architecture, a 1D convolutional network and training using the different DNA numerical representations in 1 dimention (see [Coding Schemes folder](https://github.com/simonorozcoarias/MLinTEs/tree/master/CodingSchemes)). 
 
 ## Dimensional reduction tests.ipynb
 Experiments done comparing an autoencoder network againts PCA to reduce the dimensionality of the dataset.
@@ -20,7 +20,7 @@ A Fully connected neural network that has the task of classifying LTR retrotrans
 A experiment using the GBRASnet architecture using the positional k-mer representation of LTR retrotransposons.
 
 ## TERL_CNN_comparison_2D_representations.ipynb
-Experiments done with TERL architecture, a 2D convolutional network and training using the different DNA numerical representations in 2 dimentions (see [Coding Schemes folder](https://github.com/simonorozcoarias/MLinTEs/tree/master/CodingSchemes). 
+Experiments done with TERL architecture, a 2D convolutional network and training using the different DNA numerical representations in 2 dimentions (see [Coding Schemes folder](https://github.com/simonorozcoarias/MLinTEs/tree/master/CodingSchemes)). 
 
 ## TERL_CNN_one_hot_complementary.ipynb
 Experiment using the one-hot complementary scheme, in 2 dimentions and the TERL architecture.
