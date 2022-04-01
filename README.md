@@ -19,8 +19,8 @@ Co-Advisor: Romain Guyot, Ph.D.
 * [Other useful resources](#resources) 
 
 ## CodingSchemes folder
-<a name="introduction"/>
-Scripts used to convert DNA sequences into numerical respresentatons.
+<a name="CodingSchemes"/>
+Scripts used to convert DNA sequences into numerical respresentatons. 
 
 ## DL_Exps folder
 <a name="DL_Exps"/>
@@ -48,7 +48,7 @@ Scripts and neural network architectures used in the detection problem.
 
 ## Undergrate_projects folder
 <a name="Undergrate_projects"/>
-Folder containing undergraduate projects related with this PhD thesis.
+Folder containing undergraduate projects related with this Ph.D. thesis.
 
 ## k_mer_gen_exps folder
 <a name="k_mer_gen_exps"/>
