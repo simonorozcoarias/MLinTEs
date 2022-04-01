@@ -362,5 +362,5 @@ if __name__ == '__main__':
 		conversion2d(seqfile+".filtered", maxLen, numSeqs, method)
 	elif method == 6: # TERL method:
 		conversion2dTERL(seqfile+".filtered", maxLen, numSeqs, method)
-	elif method == 7: # Simon method:
+	elif method == 7: # Positional K-mers method:
 		positional_kmers(seqfile+".filtered", maxLen, numSeqs, method)
