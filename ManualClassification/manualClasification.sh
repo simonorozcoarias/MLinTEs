@@ -10,23 +10,23 @@ for i in `grep ">" ${seqfile} | sed 's/>//g'`
 do
   seqret -sequence ${seqfile}:${i} -outseq ${i}.RT.fa
   #GAG
-  BLASTRESULT_GAG=`blastall -p blastx -a $threads -d $DB -i ${i}.RT.fa -e 1e-4 -m8 | grep 'GAG_' | head -n 1 | cut -f 2`
-	BLASTEVALUE_GAG=`blastall -p blastx -a $threads -d $DB -i ${i}.RT.fa -e 1e-4 -m8 | grep 'GAG_' | head -n 1 | cut -f 11`
+  BLASTRESULT_GAG=`blastx -num_threads $threads -db $DB -query ${i}.RT.fa -evalue 1e-4 -outfmt 6 | grep 'GAG_' | head -n 1 | cut -f 2`
+	BLASTEVALUE_GAG=`blastx -num_threads $threads -db $DB -query ${i}.RT.fa -evalue 1e-4 -outfmt 6 | grep 'GAG_' | head -n 1 | cut -f 11`
 	#RT
-	BLASTRESULT_RT=`blastall -p blastx -a $threads -d $DB -i ${i}.RT.fa -e 1e-4 -m8 | grep 'RT_' | head -n 1 | cut -f 2`
-	BLASTEVALUE_RT=`blastall -p blastx -a $threads -d $DB -i ${i}.RT.fa -e 1e-4 -m8 | grep 'RT_' | head -n 1 | cut -f 11`
+	BLASTRESULT_RT=`blastx -num_threads $threads -db $DB -query ${i}.RT.fa -evalue 1e-4 -outfmt 6 | grep 'RT_' | head -n 1 | cut -f 2`
+	BLASTEVALUE_RT=`blastx -num_threads $threads -db $DB -query ${i}.RT.fa -evalue 1e-4 -outfmt 6 | grep 'RT_' | head -n 1 | cut -f 11`
 	#INT
-	BLASTRESULT_INT=`blastall -p blastx -a $threads -d $DB -i ${i}.RT.fa -e 1e-4 -m8 | grep 'INT_' | head -n 1 | cut -f 2`
-	BLASTEVALUE_INT=`blastall -p blastx -a $threads -d $DB -i ${i}.RT.fa -e 1e-4 -m8 | grep 'INT_' | head -n 1 | cut -f 11`
+	BLASTRESULT_INT=`blastx -num_threads $threads -db $DB -query ${i}.RT.fa -evalue 1e-4 -outfmt 6 | grep 'INT_' | head -n 1 | cut -f 2`
+	BLASTEVALUE_INT=`blastx -num_threads $threads -db $DB -query ${i}.RT.fa -evalue 1e-4 -outfmt 6 | grep 'INT_' | head -n 1 | cut -f 11`
 	#RNaseH
-	BLASTRESULT_RNASE=`blastall -p blastx -a $threads -d $DB -i ${i}.RT.fa -e 1e-4 -m8 | grep 'RNaseH_' | head -n 1 | cut -f 2`
-	BLASTEVALUE_RNASE=`blastall -p blastx -a $threads -d $DB -i ${i}.RT.fa -e 1e-4 -m8 | grep 'RNaseH_' | head -n 1 | cut -f 11`
+	BLASTRESULT_RNASE=`blastx -num_threads $threads -db $DB -query ${i}.RT.fa -evalue 1e-4 -outfmt 6 | grep 'RNaseH_' | head -n 1 | cut -f 2`
+	BLASTEVALUE_RNASE=`blastx -num_threads $threads -db $DB -query ${i}.RT.fa -evalue 1e-4 -outfmt 6 | grep 'RNaseH_' | head -n 1 | cut -f 11`
 	#AP
-	BLASTRESULT_AP=`blastall -p blastx -a $threads -d $DB -i ${i}.RT.fa -e 1e-4 -m8 | grep 'AP_' | head -n 1 | cut -f 2`
-	BLASTEVALUE_AP=`blastall -p blastx -a $threads -d $DB -i ${i}.RT.fa -e 1e-4 -m8 | grep 'AP_' | head -n 1 | cut -f 11`
+	BLASTRESULT_AP=`blastx -num_threads $threads -db $DB -query ${i}.RT.fa -evalue 1e-4 -outfmt 6 | grep 'AP_' | head -n 1 | cut -f 2`
+	BLASTEVALUE_AP=`blastx -num_threads $threads -db $DB -query ${i}.RT.fa -evalue 1e-4 -outfmt 6 | grep 'AP_' | head -n 1 | cut -f 11`
 	#ENV
-	BLASTRESULT_ENV=`blastall -p blastx -a $threads -d $DB -i ${i}.RT.fa -e 1e-4 -m8 | grep 'ENV_' | head -n 1 | cut -f 2`
-  BLASTEVALUE_ENV=`blastall -p blastx -a $threads -d $DB -i ${i}.RT.fa -e 1e-4 -m8 | grep 'ENV_' | head -n 1 | cut -f 11`
+	BLASTRESULT_ENV=`blastx -num_threads $threads -db $DB -query ${i}.RT.fa -evalue 1e-4 -outfmt 6 | grep 'ENV_' | head -n 1 | cut -f 2`
+  BLASTEVALUE_ENV=`blastx -num_threads $threads -db $DB -query ${i}.RT.fa -evalue 1e-4 -outfmt 6 | grep 'ENV_' | head -n 1 | cut -f 11`
   id=`echo $i`
   seqfile2=${i}.RT.fa
   len=`infoseq -sequence $seqfile2 -only -length -noheading | sed 's/ //g'`
