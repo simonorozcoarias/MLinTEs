@@ -3,6 +3,8 @@ Ph.D. Thesis of Simon Orozco-Arias
 Advisor: Gustavo Isaza, Ph.D.
 Co-Advisor: Romain Guyot, Ph.D.
 
+The PDF file of this Ph.D. thesis is available [here](https://repositorio.ucaldas.edu.co/handle/ucaldas/17590)
+
 ## The organization of this repository is the following:
 
 * [CodingSchemes](#CodingSchemes)  
