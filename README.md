@@ -19,6 +19,7 @@ The PDF file of this Ph.D. thesis is available [here](https://repositorio.ucalda
 * [retraining_coffee](#retraining_coffee)
 * [Published papers](#papers) 
 * [Other useful resources](#resources) 
+* [Citation](#citation) 
 
 ## CodingSchemes folder
 <a name="CodingSchemes"/>
@@ -80,3 +81,9 @@ This folder contains the jupyter notebook used to train Inpactor2 to specialize 
 * LTR retrotransposon classification experiments using ML: [ML experiments github](https://github.com/simonorozcoarias/MachineLearningInTEs)
 * Plant LTR retrotransposon reference library: [InpactorDB dataset](https://zenodo.org/record/5816833#.YdRXUXWZNH4)
 * Dataset of genomic features other than LTR-RTs: [Negative Instances dataset](https://zenodo.org/record/4543905#.YdRXpnWZNH4)
+
+## Citation
+<a name="citation"/>
+If you use any material or resource from this repo, please cite the following Ph.D. dissertation:
+
+Orozco Arias, S. (2022). A computational architecture to identify and classify LTR retrotransposons in plant genomes (Doctoral dissertation, Facultad de Ingeniería, Universidad de Caldas).
