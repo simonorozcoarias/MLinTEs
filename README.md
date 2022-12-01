@@ -86,5 +86,4 @@ This folder contains the jupyter notebook used to train Inpactor2 to specialize 
 <a name="citation"/>
 If you use any material or resource from this repo, please cite the following Ph.D. dissertation:
 
-
-Orozco Arias, S. (2022). A computational architecture to identify and classify LTR retrotransposons in plant genomes (Doctoral dissertation, Facultad de Ingeniería, Universidad de Caldas).
+* Orozco Arias, S. (2022). A computational architecture to identify and classify LTR retrotransposons in plant genomes (Doctoral dissertation, Facultad de Ingeniería, Universidad de Caldas).
