@@ -7,7 +7,7 @@ The PDF file of this Ph.D. thesis is available [here](https://repositorio.ucalda
 
 ## The organization of this repository is the following:
 
-* [CodingSchemes folder](#CodingSchemes)  
+* [CodingSchemes](#CodingSchemes)  
 * [DL_Exps](#DL_Exps)  
 * [Inpactor2](#Inpactor2)  
 * [ML_Exps](#ML_Exps) 
@@ -21,7 +21,7 @@ The PDF file of this Ph.D. thesis is available [here](https://repositorio.ucalda
 * [Other useful resources](#resources) 
 * [Citation](#citation) 
 
-## CodingSchemes folder
+## CodingSchemes
 Scripts used to convert DNA sequences into numerical respresentatons. 
 
 ## DL_Exps folder
