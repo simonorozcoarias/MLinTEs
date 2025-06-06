@@ -7,7 +7,7 @@ The PDF file of this Ph.D. thesis is available [here](https://repositorio.ucalda
 
 ## The organization of this repository is the following:
 
-* [CodingSchemes](#CodingSchemes)  
+* [CodingSchemes folder](#CodingSchemes)  
 * [DL_Exps](#DL_Exps)  
 * [Inpactor2](#Inpactor2)  
 * [ML_Exps](#ML_Exps) 
