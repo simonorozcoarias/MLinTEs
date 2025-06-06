@@ -24,31 +24,31 @@ The PDF file of this Ph.D. thesis is available [here](https://repositorio.ucalda
 ## CodingSchemes
 Scripts used to convert DNA sequences into numerical respresentatons. 
 
-## DL_Exps folder
+## DL_Exps
 Neural network experiments done in the thesis to identify, filtering and classify LTR-retrotransposons
 
-## Inpactor2 folder
+## Inpactor2
 Folder containing all versions of the software Inpactor2. The last (stable) version is available at: https://github.com/simonorozcoarias/Inpactor2
 
-## ML_Exps folder
+## ML_Exps
 Scripts used to test different coding schemes, pre-processing techniques and ML algorithms.
 
-## ManualClassification folder
+## ManualClassification
 Scripts to classify LTR retrotransposons using homology-based method based on the enzymatic domains present in those elements.
 
-## Original_DBs folder
+## Original_DBs
 Some databases used in ML experiments
 
-## Position_detection folder
+## Position_detection
 Scripts and neural network architectures used in the detection problem.
 
-## Undergrate_projects folder
+## Undergrate_projects
 Folder containing undergraduate projects related with this Ph.D. thesis.
 
-## k_mer_gen_exps folder
+## k_mer_gen_exps
 Scripts and neural networks used to find a solution to the bottleneck of calculating k-mers.
 
-## retraining_coffee folder
+## retraining_coffee
 This folder contains the jupyter notebook used to train Inpactor2 to specialize it to the coffea genus
 
 ## Publish papers
